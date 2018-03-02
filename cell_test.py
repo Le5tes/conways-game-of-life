@@ -12,8 +12,8 @@ def test_starts_dead():
 	cell = Cell([])
 	assert cell.is_alive == False
 
-def test_becomes_alive_if_2_living_cells_nearby():
-	cell = setup_cell(False,2)
+def test_becomes_alive_if_3_living_cells_nearby():
+	cell = setup_cell(False,3)
 	cell.prep()
 	cell.update()
 	assert cell.is_alive == True
