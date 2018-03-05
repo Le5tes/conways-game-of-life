@@ -1,6 +1,6 @@
 class Cell:
 	is_alive = False
-	def __init__(self,surrounders):
+	def set_surrounders(self,surrounders):
 		self.__surrounders = surrounders
 
 	def prep(self):
