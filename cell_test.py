@@ -40,3 +40,8 @@ def test_dies_with_too_many_living_cells_nearby():
 	cell.prep()
 	cell.update()
 	assert cell.is_alive == False
+
+def test_toggle_toggles_alive_or_dead():
+	cell = Cell()
+	cell.toggle()
+	assert cell.is_alive == True

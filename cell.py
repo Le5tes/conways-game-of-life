@@ -15,3 +15,6 @@ class Cell:
 
 	def update(self):
 		self.is_alive = self.__next
+
+	def toggle(self):
+		self.is_alive = not self.is_alive
