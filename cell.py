@@ -1,5 +1,9 @@
 class Cell:
-	is_alive = False
+
+	def __init__(self):
+		self.is_alive = False
+		self.changed = True
+
 	def set_surrounders(self,surrounders):
 		self.__surrounders = surrounders
 
@@ -14,6 +18,7 @@ class Cell:
 			self.__next = False
 
 	def update(self):
+		self.changed = (True if self.is_alive != self.__next else False)
 		self.is_alive = self.__next
 
 	def toggle(self):

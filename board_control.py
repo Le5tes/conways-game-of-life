@@ -15,11 +15,8 @@ class BoardControl:
 		print('start')
 		for i in range(self.board.size):
 			for j in range(self.board.size):
-				position = XY(self.position.x+ i * self.scale, self.position.y + j * self.scale)
-				bounds = XY(self.position.x+ (i + 1) * self.scale, self.position.y + (j+ 1) * self.scale)
-				box = self.image_class(position, bounds)
-				box.setFill('red' if self.board.cells[i][j].is_alive == True else 'grey')
-				box.draw(window)
+				if self.board.cells[i][j].changed:
+					self._draw_cell(i,j,window)
 		print('finish')
 
 	def update(self):
@@ -32,3 +29,10 @@ class BoardControl:
 	def _within_bounds(self,pos):
 		return pos.x > self.position.x and pos.y > self.position.y \
 				and pos.x < self.bounds.x and pos.y < self.bounds.y
+
+	def _draw_cell(self,x,y,window):
+		position = XY(self.position.x+ x * self.scale, self.position.y + y * self.scale)
+		bounds = XY(self.position.x+ (x + 1) * self.scale, self.position.y + (y+ 1) * self.scale)
+		box = self.image_class(position, bounds)
+		box.setFill('red' if self.board.cells[x][y].is_alive == True else 'grey')
+		box.draw(window)
