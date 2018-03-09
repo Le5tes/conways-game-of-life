@@ -18,3 +18,4 @@ class Button:
 
 	def draw(self,window):
 		Rectangle(self.position, self.bounds).draw(window)
+		Text(self.position, self.text).draw(window)
