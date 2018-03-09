@@ -1,5 +1,6 @@
 from board_control import BoardControl
 from graphics import GraphWin, Rectangle
+from xy import XY
 import pytest
 
 @pytest.fixture
@@ -40,3 +41,7 @@ def test_draw_draws_cells(subject, rectangle, window):
 def test_update_updates_board(subject, board):
 	subject.update()
 	board.update.assert_called()
+
+def test_click_tells_board_to_toggle_cell(subject, board):
+	subject.click(XY(8,6))
+	board.toggle.assert_called_with(XY(1,1))

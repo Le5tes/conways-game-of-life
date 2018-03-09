@@ -22,3 +22,6 @@ class BoardControl:
 
 	def update(self):
 		self.board.update()
+
+	def click(self,pos):
+		self.board.toggle(XY((pos.x//self.scale),pos.y//self.scale))
