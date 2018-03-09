@@ -17,6 +17,9 @@ class Board:
 			for cell in row_of_cells:
 				cell.update()
 
+	def toggle(self, pos):
+		self.cells[pos.x][pos.y].toggle()
+
 	def __get_surrounders(self,x,y,size):
 		return [self.cells[p][q] 
 				for p in range(x-1, x+2)

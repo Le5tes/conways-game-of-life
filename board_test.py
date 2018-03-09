@@ -1,5 +1,6 @@
 from board import Board
 from cell import Cell
+from xy import XY
 import pytest
 
 @pytest.fixture
@@ -28,3 +29,8 @@ def test_initialises_cells_with_their_neighbours(mockcell):
 	Board(5,cell_double)
 	mockcell.set_surrounders.assert_called_with([mockcell,mockcell,mockcell])
 	
+def test_toggle_toggles_a_cell(subject, mocker):
+	mocker.spy(subject.cells[2][2], 'toggle')
+	subject.toggle(XY(2,2))
+	assert subject.cells[2][2].toggle.call_count == 1
+
