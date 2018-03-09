@@ -45,3 +45,4 @@ def test_update_updates_board(subject, board):
 def test_click_tells_board_to_toggle_cell(subject, board):
 	subject.click(XY(8,6))
 	board.toggle.assert_called_with(XY(1,1))
+
