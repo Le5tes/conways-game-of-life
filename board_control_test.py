@@ -37,3 +37,6 @@ def test_draw_draws_cells(subject, rectangle, window):
 	subject.draw(window)
 	assert rectangle.draw.call_count == 4
 
+def test_update_updates_board(subject, board):
+	subject.update()
+	board.update.assert_called()

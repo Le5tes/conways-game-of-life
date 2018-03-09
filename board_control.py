@@ -19,3 +19,6 @@ class BoardControl:
 				box = self.image_class(position, bounds)
 				box.draw(window)
 		print('finish')
+
+	def update(self):
+		self.board.update()
