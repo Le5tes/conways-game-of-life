@@ -1,3 +1,5 @@
+from graphics import *
+
 class Button:
 	def __init__(self, position, size, text, function):
 		self.size = size
@@ -12,3 +14,7 @@ class Button:
 	def __within_bounds(self, position):
 		return position.x > self.position.x and position.y > self.position.y \
 			   and position.x < self.position.x + self.size.x and position.y < self.position.y + self.size.y
+
+	def draw(self,window):
+		oppositecorner = Point(self.position.x + self.size.x, self.position.y + self.size.y)
+		Rectangle(self.position, oppositecorner).draw(window)
