@@ -1,7 +1,8 @@
-from graphics import Rectangle, Point
+from graphics import Rectangle
+from xy import XY
 
 class BoardControl:
-	def __init__(self,board, position = Point(0,0), scale = 5, image_class = Rectangle):
+	def __init__(self,board, position = XY(0,0), scale = 5, image_class = Rectangle):
 		self.board = board
 		self.image_class= image_class
 		self.position = position
@@ -13,8 +14,8 @@ class BoardControl:
 		print('start')
 		for i in range(self.board.size):
 			for j in range(self.board.size):
-				position = Point(self.position.x+ i * self.scale, self.position.y + j * self.scale)
-				bounds = Point(self.position.x+ (i + 1) * self.scale, self.position.y + (j+ 1) * self.scale)
+				position = XY(self.position.x+ i * self.scale, self.position.y + j * self.scale)
+				bounds = XY(self.position.x+ (i + 1) * self.scale, self.position.y + (j+ 1) * self.scale)
 				box = self.image_class(position, bounds)
 				box.draw(window)
 		print('finish')
