@@ -26,6 +26,7 @@ def cell(mocker):
 def board(mocker,cell):
 	board = mocker.Mock()
 	board.cells = [[cell,cell],[cell,cell]]
+	board.size = 2
 	return board
 	
 @pytest.fixture
