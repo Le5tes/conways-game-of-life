@@ -36,3 +36,4 @@ class BoardControl:
 		box = self.image_class(position, bounds)
 		box.setFill('red' if self.board.cells[x][y].is_alive == True else 'grey')
 		box.draw(window)
+		self.board.cells[x][y].changed = False

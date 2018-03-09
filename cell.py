@@ -23,3 +23,4 @@ class Cell:
 
 	def toggle(self):
 		self.is_alive = not self.is_alive
+		self.changed = True
