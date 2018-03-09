@@ -1,13 +1,6 @@
 from button import Button
+from xy import XY
 import pytest
-
-class XY:
-	def __init__(self,x,y):
-		self.x = x
-		self.y = y
-
-
-
 
 @pytest.fixture
 def subject(mocker): 
