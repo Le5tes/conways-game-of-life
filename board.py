@@ -4,9 +4,10 @@ class Board:
 
 	def __init__(self,size, cell_class = Cell):
 		self.cells = [[cell_class() for _ in range(size)] for _ in range(size)]
+		self.size = size
 		for x in range(size):
 			for y in range(size):
-				print(str(self.cells[x][y]))
+				# print(str(self.cells[x][y]))
 				self.cells[x][y].set_surrounders(self.__get_surrounders(x,y,size))
 
 	def update(self):
