@@ -29,9 +29,10 @@ def board(mocker,cell):
 	return board
 	
 @pytest.fixture
-def subject(window, board, rectangle_class):
-	return BoardControl(board,window, image_class=rectangle_class)
+def subject( board, rectangle_class):
+	return BoardControl(board, image_class=rectangle_class)
 
-def test_draw_draws_cells(subject,rectangle):
-	subject.draw()
+def test_draw_draws_cells(subject, rectangle, window):
+	subject.draw(window)
 	assert rectangle.draw.call_count == 4
+

@@ -1,17 +1,20 @@
 from graphics import Rectangle, Point
 
 class BoardControl:
-	def __init__(self,board,window, position = Point(0,0), scale = Point(5,5), image_class = Rectangle):
+	def __init__(self,board, position = Point(0,0), scale = 5, image_class = Rectangle):
 		self.board = board
-		self.window = window
 		self.image_class= image_class
 		self.position = position
 		self.scale = scale
 
-	def draw(self):
-		for row in self.board.cells:
-			for cell in row:
-				position = Point(0,0)
-				bounds = Point(0,0)
+	def draw(self, window):
+		# for i, row in enumerate(self.board.cells):
+			# for j, cell in enumerate(row):
+		print('start')
+		for i in range(self.board.size):
+			for j in range(self.board.size):
+				position = Point(self.position.x+ i * self.scale, self.position.y + j * self.scale)
+				bounds = Point(self.position.x+ (i + 1) * self.scale, self.position.y + (j+ 1) * self.scale)
 				box = self.image_class(position, bounds)
-				box.draw(self.window)
+				box.draw(window)
+		print('finish')
