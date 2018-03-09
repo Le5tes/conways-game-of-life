@@ -12,7 +12,7 @@ class XY:
 @pytest.fixture
 def subject(mocker): 
 	mock_method = mocker.stub(name='my_method')
-	return Button(XY(5,5),XY(10,10),'MAH BUTTON', mock_method)
+	return Button(XY(5,5),XY(10,10),'MAH BUTTON', mock_method, XY)
 
 def test_if_click_is_within_bounds_calls_function(subject):
 	subject.click(XY(10,10))
@@ -28,7 +28,7 @@ def test_if_not_within_bounds_do_nothing(subject):
 class MyObj:
 	def __init__(self):
 		self.value = 0
-		self.button = Button(XY(5,5),XY(10,10), 'Button', self.method)
+		self.button = Button(XY(5,5),XY(10,10), 'Button', self.method, XY)
 
 	def click(self, point):
 		self.button.click(point)
