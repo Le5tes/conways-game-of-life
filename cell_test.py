@@ -19,6 +19,12 @@ def test_becomes_alive_if_3_living_cells_nearby():
 	cell.update()
 	assert cell.is_alive == True
 
+def test_cell_stays_dead_if_less_living_nearby():
+	cell = setup_cell(False,2)
+	cell.prep()
+	cell.update()
+	assert cell.is_alive == False
+
 def test_stays_alive_with_2_or_3_living_cells_nearby():
 	cell = setup_cell(True,2)
 	cell.prep()

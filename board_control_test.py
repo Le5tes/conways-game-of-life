@@ -20,7 +20,8 @@ def rectangle_class(mocker,rectangle):
 @pytest.fixture
 def cell(mocker):
 	cell = mocker.Mock()
-	cell.alive.return_value = True
+	cell.is_alive = True
+	cell.changed = True
 	return cell
 
 @pytest.fixture

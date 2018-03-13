@@ -2,11 +2,12 @@ class Cell:
 
 	def __init__(self):
 		self.is_alive = False
+		self.__next = False 
 		self.changed = True
 
 	def set_surrounders(self,surrounders):
 		self.__surrounders = surrounders
-
+		
 	def prep(self):
 		surrounders_alive = [cell.is_alive for cell in self.__surrounders].count(True)
 
@@ -24,3 +25,5 @@ class Cell:
 	def toggle(self):
 		self.is_alive = not self.is_alive
 		self.changed = True
+
+
