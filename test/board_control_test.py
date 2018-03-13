@@ -1,6 +1,6 @@
-from board_control import BoardControl
-from graphics import GraphWin, Rectangle
-from xy import XY
+from lib.board_control import BoardControl
+from lib.graphics import GraphWin, Rectangle
+from lib.xy import XY
 import pytest
 
 @pytest.fixture

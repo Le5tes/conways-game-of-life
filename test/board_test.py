@@ -1,6 +1,6 @@
-from board import Board
-from cell import Cell
-from xy import XY
+from lib.board import Board
+from lib.cell import Cell
+from lib.xy import XY
 import pytest
 
 @pytest.fixture

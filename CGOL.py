@@ -1,13 +1,12 @@
-from window import CGOLWindow
-
-window = CGOLWindow(1000, 800, 100)
-window.draw()
+from lib import window
+win = window.CGOLWindow(1000, 800, 100)
+win.draw()
 
 def main_loop():
-	while window.closed() == False:
+	while win.closed() == False:
 
-		window.update()
-		mouseclick =  window.getMouse()
-		window.click(mouseclick)
+		win.update()
+		mouseclick =  win.getMouse()
+		win.click(mouseclick)
 
 main_loop()

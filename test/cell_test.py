@@ -1,4 +1,4 @@
-from cell import Cell
+from lib.cell import Cell
 
 def setup_cell(is_alive,num_of_surrounding_alive):
 	living_cell = Cell()

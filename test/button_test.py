@@ -1,5 +1,5 @@
-from button import Button
-from xy import XY
+from lib.button import Button
+from lib.xy import XY
 import pytest
 
 @pytest.fixture
