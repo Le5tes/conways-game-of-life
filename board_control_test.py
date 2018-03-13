@@ -18,16 +18,10 @@ def rectangle_class(mocker,rectangle):
 	return rc
 
 @pytest.fixture
-def cell(mocker):
-	cell = mocker.Mock()
-	cell.is_alive = True
-	cell.changed = True
-	return cell
-
-@pytest.fixture
-def board(mocker,cell):
+def board(mocker):
 	board = mocker.Mock()
-	board.cells = [[cell,cell],[cell,cell]]
+	board.cells = [[mocker.Mock(name='cell'),mocker.Mock(name='cell')],
+				   [mocker.Mock(name='cell'),mocker.Mock(name='cell')]]
 	board.size = 2
 	return board
 	
