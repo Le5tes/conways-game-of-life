@@ -10,14 +10,11 @@ class BoardControl:
 		self.bounds = XY(position.x + scale * board.size, position.y + scale * board.size)
 
 	def draw(self, window):
-		# for i, row in enumerate(self.board.cells):
-			# for j, cell in enumerate(row):
-		print('start')
 		for i in range(self.board.size):
 			for j in range(self.board.size):
 				if self.board.cells[i][j].changed:
 					self._draw_cell(i,j,window)
-		print('finish')
+		
 
 	def update(self):
 		self.board.update()
